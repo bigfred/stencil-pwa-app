@@ -106,4 +106,34 @@ declare global {
   }
 }
 
+
+import {
+  MyLegend as MyLegend
+} from './components/my-legend/my_legend';
+
+declare global {
+  interface HTMLMyLegendElement extends MyLegend, HTMLStencilElement {
+  }
+  var HTMLMyLegendElement: {
+    prototype: HTMLMyLegendElement;
+    new (): HTMLMyLegendElement;
+  };
+  interface HTMLElementTagNameMap {
+    "my-legend": HTMLMyLegendElement;
+  }
+  interface ElementTagNameMap {
+    "my-legend": HTMLMyLegendElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "my-legend": JSXElements.MyLegendAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface MyLegendAttributes extends HTMLAttributes {
+      
+    }
+  }
+}
+
 declare global { namespace JSX { interface StencilJSX {} } }
